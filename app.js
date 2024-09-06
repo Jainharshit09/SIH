@@ -10,7 +10,7 @@ app.post('/storeUser', async (req, res) => {
   const { uuid, email } = req.body;
 
   try {
-    await storeUserInFirestore(uuid, email);
+    await storeUserInRealtimeDB(uuid, email);
     console.log(`User with UUID: ${uuid} and Email: ${email} stored successfully`);
 
     res.status(200).send('User stored successfully');
